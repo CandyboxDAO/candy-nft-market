@@ -1,5 +1,5 @@
 /**
- * Deploys the Juice NFT Market contract.
+ * Deploys the Candy NFT Market contract.
  *
  * Example usage:
  *
@@ -8,7 +8,7 @@
  * TODO: Find a solution for local chain.
  */
 
-const rinkebyTerminalV1 = require(`@jbx-protocol/contracts/deployments/rinkeby/TerminalV1.json`);
+const rinkebyTerminalV1 = require(`@candyboxdao/contracts/deployments/rinkeby/TerminalV1.json`);
 
 const getTerminalV1Address = (chainId) => {
     if (chainId == 4 || chainId == 31337) { // added the || chainId == 31337 to fix the test
@@ -25,7 +25,7 @@ module.exports = async ({ getNamedAccounts, deployments, getChainId }) => {
 
     const terminalV1Address = getTerminalV1Address(chainId);
     console.log(
-        `Deploying Juice NFT Market with Chain ID {${chainId}} and TerminalV1 address ${terminalV1Address}`,
+        `Deploying Candy NFT Market with Chain ID {${chainId}} and TerminalV1 address ${terminalV1Address}`,
     );
 
     await deploy('NFTMarket', {

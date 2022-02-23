@@ -1,27 +1,27 @@
 {
-    "name": "@jbx-protocol/nft-market",
+    "name": "@candyboxdao/nft-market",
     "version": "0.0.1",
-    "description": "NFT Market is a NFT marketplace designed for Juicebox Projects.",
+    "description": "NFT Market is a NFT marketplace designed for Candybox Projects.",
     "author": "nnnnicholas & mejango",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/jbx-protocol/NFTMKT/issues"
+        "url": "https://github.com/candyboxdao/NFTMKT/issues"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/jbx-protocol/juice-nft-market.git"
+        "url": "git+https://github.com/candyboxdao/candy-nft-market.git"
     },
     "keywords": [
         "nft",
         "marketplace",
         "erc721",
         "solidity",
-        "juicebox",
+        "candybox",
         "ethereum",
         "evm",
         "smart-contract"
     ],
-    "homepage": "https://github.com/jbx-protocol/juice-nft-market",
+    "homepage": "https://github.com/candyboxdao/candy-nft-market",
     "devDependencies": {
         "@nomiclabs/hardhat-ethers": "^2.0.3",
         "@nomiclabs/hardhat-etherscan": "^2.1.7",
@@ -42,7 +42,7 @@
     "dependencies": {
         "@chainlink/contracts": "^0.3.0",
         "@ethersproject/bignumber": "^5.5.0",
-        "@jbx-protocol/contracts": "^0.0.6",
+        "@candyboxdao/contracts": "^0.0.6",
         "@openzeppelin/contracts": "^4.4.1",
         "dotenv": "^10.0.0",
         "evm-bn": "^1.1.1",

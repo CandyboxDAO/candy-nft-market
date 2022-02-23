@@ -5,7 +5,7 @@ import 'hardhat/console.sol';
 import '@openzeppelin/contracts/security/ReentrancyGuard.sol';
 import '@openzeppelin/contracts/token/ERC721/IERC721.sol';
 import '@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol';
-import '@jbx-protocol/contracts/contracts/v1/interfaces/ITerminalDirectory.sol';
+import '@candyboxdao/contracts/contracts/v1/interfaces/ITerminalDirectory.sol';
 import '@openzeppelin/contracts/utils/Address.sol';
 import '@paulrberg/contracts/math/PRBMath.sol';
 
@@ -19,8 +19,8 @@ struct SaleRecipient {
 
 /**
  * @title NFTMKT
- * @author @juicebox
- * @notice An NFT marketplace built for Juicebox projects.
+ * @author @candybox
+ * @notice An NFT marketplace built for Candybox projects.
  * @dev Compatible with ERC-721 NFTs only.
  */
 contract NFTMarket is IERC721Receiver, ReentrancyGuard {
@@ -117,7 +117,7 @@ contract NFTMarket is IERC721Receiver, ReentrancyGuard {
     /**
      * @notice Creates an instance of NFTMKT. Any address may permissionlesly list their NFTs on this NFTMKT instance.
      * @dev Frontends can filter listed NFTs for those relevant to a specific project, or listed by a particular address.
-     * @param _terminalDirectory A directory of a project's current Juicebox terminal to receive payments in.
+     * @param _terminalDirectory A directory of a project's current Candybox terminal to receive payments in.
      */
     constructor(ITerminalDirectory _terminalDirectory) {
         terminalDirectory = _terminalDirectory;
@@ -190,7 +190,7 @@ contract NFTMarket is IERC721Receiver, ReentrancyGuard {
     /**
      * @notice Routes funds from purchase to the preconfigured recipients.
      * @dev If SalesRecipients points at a project, this function calls _terminal.pay(). If SaleRecipients points to an address, this function transfers ETH to that address directly.
-     * Similar logic to https://github.com/jbx-protocol/juicehouse/blob/540f3037689ae74f2f97d95f9f28d88f69afd4a3/packages/hardhat/contracts/TerminalV1.sol#L1015
+     * Similar logic to https://github.com/candyboxdao/candyhouse/blob/540f3037689ae74f2f97d95f9f28d88f69afd4a3/packages/hardhat/contracts/TerminalV1.sol#L1015
      */
     function purchase(
         IERC721 _contract,
@@ -221,7 +221,7 @@ contract NFTMarket is IERC721Receiver, ReentrancyGuard {
             if (_recipientCut > 0) {
                 // And the recipient is a project
                 if (_recipient.projectId > 0) {
-                    // Get a reference to the Juicebox terminal being used.
+                    // Get a reference to the Candybox terminal being used.
                     ITerminal _terminal = terminalDirectory.terminalOf(_recipient.projectId);
                     // Project must have a terminal.
                     if (_terminal == ITerminal(address(0))) revert TerminalNotFound();

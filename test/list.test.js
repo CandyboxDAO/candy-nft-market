@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import { ethers, waffle, deployments } from 'hardhat';
 import { deployMockContract } from '@ethereum-waffle/mock-contract';
 
-import rinkebyTerminalV1 from '@jbx-protocol/contracts/deployments/rinkeby/TerminalV1.json';
+import rinkebyTerminalV1 from '@candyboxdao/contracts/deployments/rinkeby/TerminalV1.json';
 import { isConstructorDeclaration, OperationCanceledException } from 'typescript';
 
 
